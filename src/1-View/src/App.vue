@@ -2,8 +2,9 @@
 import { ref } from 'vue';
 import {PeopleViewModel} from '../../2-Presentation/PeopleViewModel';
 import type {Person} from '../../shared/Person';
+import {ServiceReader} from '../../3-DataAccess/ServiceReader';
 
-const peopleViewModel = new PeopleViewModel();
+const peopleViewModel = new PeopleViewModel(new ServiceReader());
 const people = ref<Person[] | undefined>([]);
 
 function refresh() {

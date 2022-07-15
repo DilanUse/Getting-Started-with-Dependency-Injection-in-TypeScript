@@ -1,4 +1,3 @@
-import {ServiceReader} from '../3-DataAccess/ServiceReader';
 import {Person} from '../shared/Person';
 import {IPersonReader} from '../shared/IPersonReader';
 
@@ -8,8 +7,8 @@ export class PeopleViewModel {
     private _people: Person[];
     public people: Person[] | undefined;
 
-    public constructor() {
-        this._dataReader = new ServiceReader();
+    public constructor(dataReader: IPersonReader) {
+        this._dataReader = dataReader;
     }
 
     public async RefreshPeople(): Promise<void> {
