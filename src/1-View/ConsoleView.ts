@@ -21,6 +21,7 @@ export class ConsoleView {
             choices: [
                 'Fetch People',
                 'Clear Data',
+                'Exit',
             ],
         });
 
@@ -30,7 +31,7 @@ export class ConsoleView {
             this.showPeople();
             console.log(`<${this._viewModel.dataReaderType}>`);
             await this.show(true);
-        } else {
+        } else if (answers.selected === 'Clear Data') {
             await this._viewModel.ClearPeople();
             console.clear();
             await this.show(false);

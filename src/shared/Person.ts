@@ -10,7 +10,7 @@ export class Person {
         this.id = id;
         this.givenName = givenName;
         this.familyName = familyName;
-        this.startDate = startDate;
+        this.startDate = new Date(startDate);
         this.rating = rating;
     }
 

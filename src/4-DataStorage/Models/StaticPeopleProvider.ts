@@ -6,13 +6,13 @@ export class StaticPeopleProvider implements IPeopleProvider {
     private users: Person[] = [];
 
     constructor() {
-        Array.from({ length: 10 }).forEach(() => {
+        Array.from({ length: 10 }).forEach((value, index) => {
             this.users.push({
-                id: Number(faker.random.numeric()),
+                id: index,
                 givenName: faker.name.firstName(),
                 familyName: faker.name.lastName(),
                 startDate: faker.date.past(),
-                rating: Number(faker.random.numeric()),
+                rating: Number(faker.random.numeric(2)),
             });
         });
     }
