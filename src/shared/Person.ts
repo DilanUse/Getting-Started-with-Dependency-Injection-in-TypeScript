@@ -13,4 +13,8 @@ export class Person {
         this.startDate = startDate;
         this.rating = rating;
     }
+
+    public toString(): string {
+        return `${this.givenName} ${this.familyName}`;
+    }
 }

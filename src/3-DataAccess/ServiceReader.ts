@@ -12,7 +12,13 @@ export class ServiceReader implements IPersonReader{
 
     public async GetPeople(): Promise<Person[]> {
         const resp = await this.client.get<Person[]>('people');
-        return resp.data;
+        return resp.data.map((person) => new Person(
+            person.id,
+            person.givenName,
+            person.familyName,
+            new Date(person.startDate),
+            person.rating,
+        ));
     }
 
     public async GetPerson(id: number): Promise<Person> {

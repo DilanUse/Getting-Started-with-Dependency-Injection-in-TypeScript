@@ -6,7 +6,8 @@
   "scripts": {
     "comp": "tsc",
     "comp:watch": "tsc --watch",
-    "start": "tsc && node ./js/4-DataStorage/api.js",
+    "api": "tsc && node ./js/4-DataStorage/api.js",
+    "start": "tsc && node ./js/0-Bootstraper/main.js",
     "test": "jest"
   },
   "repository": {
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "inquirer": "^8.0.0"
   }
 }
