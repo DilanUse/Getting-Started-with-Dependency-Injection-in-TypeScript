@@ -1,8 +1,9 @@
 import {ServiceReader} from '../3-DataAccess/ServiceReader';
 import {Person} from '../shared/Person';
+import {IPersonReader} from '../shared/IPersonReader';
 
 export class PeopleViewModel {
-    private _dataReader: ServiceReader;
+    protected _dataReader: IPersonReader;
     // @ts-ignore
     private _people: Person[];
     public people: Person[] | undefined;

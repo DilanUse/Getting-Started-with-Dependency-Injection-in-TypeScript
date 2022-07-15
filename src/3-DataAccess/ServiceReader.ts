@@ -1,8 +1,9 @@
 import {Axios} from 'axios';
 import { Person } from '../shared/Person';
+import {IPersonReader} from '../shared/IPersonReader';
 
 
-export class ServiceReader {
+export class ServiceReader implements IPersonReader{
     private client = new Axios({
         baseURL: 'http://localhost:4000/api',
         timeout: 1000,
