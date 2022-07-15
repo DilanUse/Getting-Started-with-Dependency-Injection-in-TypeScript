@@ -2,20 +2,22 @@
 import { ref } from 'vue';
 import {PeopleViewModel} from '../../2-Presentation/PeopleViewModel';
 import type {Person} from '../../shared/Person';
-import {ServiceReader} from '../../3-DataAccess/ServiceReader';
 
-const peopleViewModel = new PeopleViewModel(new ServiceReader());
 const people = ref<Person[] | undefined>([]);
 
+const props = defineProps({
+  viewModel: { type: PeopleViewModel, required: true },
+})
+
 function refresh() {
-  peopleViewModel.RefreshPeople().then(() => {
-    people.value = peopleViewModel.people;
+  props.viewModel.RefreshPeople().then(() => {
+    people.value = props.viewModel.people;
   });
 }
 
 function clear() {
-  peopleViewModel.ClearPeople().then(() => {
-    people.value = peopleViewModel.people;
+  props.viewModel.ClearPeople().then(() => {
+    people.value = props.viewModel.people;
   });
 }
 </script>
@@ -56,7 +58,7 @@ function clear() {
 
 
           <div class="alert alert-secondary mt-3 text-center" role="alert">
-            {{ peopleViewModel.dataReaderType }}
+            {{ viewModel.dataReaderType }}
           </div>
         </div>
       </div>
