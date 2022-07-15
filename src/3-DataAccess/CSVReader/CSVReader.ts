@@ -1,5 +1,5 @@
-import {IPersonReader} from '../shared/IPersonReader';
-import {Person} from '../shared/Person';
+import {IPersonReader} from '../../shared/IPersonReader';
+import {Person} from '../../shared/Person';
 import {ICSVFileLoader} from './ICSVFileLoader';
 import {CSVFileLoader} from './CSVFileLoader';
 
